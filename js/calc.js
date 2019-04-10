@@ -3,6 +3,9 @@ document.addEventListener("DOMContentLoaded", function() {
   var buttonNum = document.querySelectorAll(".buttonNum");
   var newScreen = document.getElementById("screen");
   var operator = document.querySelectorAll(".operator");
+  var equals = document.querySelectorAll(".equals")[0];
+  var clear = document.querySelectorAll(".buttonClear")[0];
+  var empty = "";
 
   for (var i = 0; i < buttonNum.length; i++) {
     var button = buttonNum[i];
@@ -23,6 +26,16 @@ document.addEventListener("DOMContentLoaded", function() {
     })
   }
 
+  equals.addEventListener("click", function(event) {
+  newScreen.innerHTML = eval(string);
+  string = ""
+
+})
+
+  clear.addEventListener("click", function(event) {
+  string = "";
+  newScreen.innerHTML = empty;
+})
 
 
 })
